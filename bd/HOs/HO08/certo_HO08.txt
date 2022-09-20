@@ -1,0 +1,91 @@
+1.)
+SELECT actors.first_name, actors.last_name
+FROM actors
+INTERSECT
+SELECT directors.first_name, directors.last_name
+FROM directors
+
+2.)
+SELECT actors.first_name, actors.last_name
+FROM actors
+EXCEPT
+SELECT directors.first_name, directors.last_name
+FROM directors
+
+3.)
+SELECT actors.first_name, actors.last_name
+FROM actors
+UNION
+SELECT directors.first_name, directors.last_name
+FROM directors
+
+4.)
+SELECT movies.name
+FROM movies
+INNER JOIN movies_directors ON movies_directors.movie_id = movies.id
+WHERE movies_directors.director_id IS NULL
+
+SELECT A.name
+FROM movies AS A
+JOIN (SELECT id
+      FROM movies
+      EXCEPT
+      SELECT movie_id
+      FROM movies_directors) AS B
+ON (A.id = B.id)
+
+5.)
+SELECT actors.first_name, actors.last_name
+FROM actors
+INNER JOIN roles ON roles.actor_id = actors.id
+GROUP BY roles.actor_id
+HAVING COUNT(roles.movie_id) < 2;
+
+SELECT C.first_name, C.last_name
+FROM actors AS C
+     JOIN 
+     (
+     SELECT id
+     FROM actors
+     EXCEPT
+     SELECT A.actor_id
+     FROM (
+          SELECT actor_id, COUNT(*) AS TOT
+          FROM roles
+          GROUP BY actor_id
+          HAVING TOT >= 2
+          ) AS A
+     ) AS B
+     ON (C.id = B.id)
+
+6.)
+SELECT movies_genres.genre, movies.year, AVG(movies.rank) AS MEDIA
+FROM movies
+INNER JOIN movies_genres ON movies.id = movies_genres.movie_id
+INNER JOIN roles ON roles.movie_id = movies.id
+GROUP BY movies_genres.genre, movies.year
+HAVING (COUNT(roles.actor_id) AS TOT) < 2
+
+SELECT 		A.genre, B.year, COUNT(*) AS TOT
+FROM  		movies_genres AS A
+		JOIN movies AS B ON (A.movie_id = B.id)
+		JOIN
+		(
+		SELECT 	  id
+		FROM  	  movies
+		EXCEPT
+		SELECT    D.movie_id
+		FROM      (
+			  SELECT movie_id, COUNT(*) AS TOT
+			  FROM roles
+			  GROUP BY movie_id
+			  HAVING TOT >= 2
+			  ) AS D
+		) AS C
+		ON (B.id = C.id)
+GROUP BY  A.genre, B.year
+
+
+
+
+* IN e EXISTS não são implementados na calculadora relax

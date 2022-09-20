@@ -1,0 +1,1 @@
+A solução eficiente é utilizar os métodos inserirFim e removerFim da Lista. Por outro lado, os métodos inserirInicio e removerInicio são uma solução ineficiente porque será necessário realocar todos  elementos do array. 

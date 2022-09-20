@@ -1,0 +1,32 @@
+1.)
+A = σ actors.gender = 'F' (actors)
+π actors.first_name, actors.last_name (A)
+
+2.)
+A = σ movies.year > 1999 (movies)
+π movies.name (A)
+
+3.)
+A = movies ⨝ movies.id = movies_directors.movie_id (movies_directors)
+B = A ⨝ movies_directors.director_id = directors.id (directors)
+π movies.name, directors.first_name, directors.last_name (B)
+
+4.)
+A = σ movies.rank > 6 (movies)
+B = A ⨝ movies.id = roles.movie_id (roles)
+C = B ⨝ roles.actor_id = actors.id (actors)
+π movies.name, actors.first_name, actors.last_name, roles.role (C)
+
+5.)
+A = directors ⨝ directors.id = movies_directors.director_id (movies_directors)
+B = γ directors.first_name, directors.last_name; count(movies_directors.movie_id)→tot (A)
+π directors.first_name, directors.last_name, tot (B)
+
+6.)
+A = γ movies_genres.genre; count(movies_genres.movie_id)→tot (movies_genres)
+π movies_genres.genre, tot (A)
+
+7.)
+A = movies ⨝ movies.id = movies_genres.movie_id (movies_genres)
+B = γ movies_genres.genre; AVG(movies.rank)→media, MIN(movies.rank)→min, MAX(movies.rank)→max (A)
+π movies_genres.genre, media, min, max (B)

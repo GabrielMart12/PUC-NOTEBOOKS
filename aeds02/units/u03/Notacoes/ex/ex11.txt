@@ -1,0 +1,8 @@
+PS     -> n                 -> O(n)
+O + PB -> n.lg(n) + lg(n)   -> O(n.lg(n))
+
+n pesquisas
+PS     -> n.n               -> O(n²)
+O + PB -> n.lg(n) + n.lg(n) -> O(n.lg(n))
+
+A segunda solução é mais eficiente, pois o vetor é ordenado apenas 1 vez e a pesquisa binária é mais eficiente que a pesquisa sequencial

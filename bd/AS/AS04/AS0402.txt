@@ -1,0 +1,13 @@
+7.)
+A = σ CURSO.Horas <= 300 (CURSO)
+B = CURSO x MODULO
+π CURSO.Nome, MODULO.Sigla, MODULO.Nome (B)
+
+8.)
+A = γ TOPICO.Modulo; COUNT(*) → QTD, SUM(TOPICO.Horas) → SOMA (TOPICO)
+B = (A) ⨝ TOPICO.Modulo = MODULO.Sigla (MODULO)
+π MODULO.Sigla, MODULO.Nome, QTD, SOMA (B)
+
+9.)
+
+

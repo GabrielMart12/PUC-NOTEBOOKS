@@ -1,0 +1,68 @@
+1.)
+SELECT actors.first_name, actors.last_name
+FROM actors
+INTERSECT
+SELECT directors.first_name, directors.last_name
+FROM directors
+
+2.)
+SELECT actors.first_name, actors.last_name
+FROM actors
+EXCEPT
+SELECT directors.first_name, directors.last_name
+FROM directors
+
+3.)
+SELECT actors.first_name, actors.last_name
+FROM actors
+UNION
+SELECT directors.first_name, directors.last_name
+FROM directors
+
+4.)
+SELECT A.name
+FROM movies AS A
+INNER JOIN (
+           SELECT movies.id
+           FROM movies
+           EXCEPT
+           SELECT movies_directors.movie_id
+           FROM movies_directors
+           ) AS B
+ON (A.id = B.id)
+
+5.)
+SELECT A.first_name, A.last_name
+FROM actors AS A
+INNER JOIN (
+           SELECT actors.id
+           FROM actors
+           EXCEPT
+           SELECT B.actor_id
+           FROM (
+                SELECT roles.actor_id, COUNT(*) AS TOT
+                FROM roles
+                GROUP BY roles.actor_id
+                HAVING TOT >= 2
+                ) AS B
+           ) AS C
+ON (C.id = A.id)
+
+6.)
+SELECT A.genre, B.year, COUNT(*) AS TOT
+FROM movies_genres AS A
+INNER JOIN movies AS B ON (B.id = A.movie_id)
+INNER JOIN (
+           SELECT movies.id
+           FROM movies
+           EXCEPT
+           SELECT C.movie_id
+           FROM (
+                SELECT roles.movie_id, COUNT(*) AS TOT
+                FROM roles
+                GROUP BY roles.movie_id
+                HAVING TOT >= 2
+                ) AS C
+           ) AS D
+ON (D.id = B.id)
+GROUP BY A.genre, B.year

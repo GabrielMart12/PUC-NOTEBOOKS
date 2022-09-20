@@ -1,0 +1,25 @@
+                 O(1) | O(lg(n)) | O(n) | O(nlg(n)) | O(n²) | O(n³) | O(n⁵) | O(n²⁰)
+lg(n)            F    | T        | T    | T         | T     | T     | T     | T
+nlg(n)           F    | F        | F    | T         | T     | T     | T     | T
+5n + 1           F    | F        | T    | T         | T     | T     | T     | T
+7n⁵ - 3n²        F    | F        | F    | F         | F     | F     | T     | T
+99n³ - 1000n²    F    | F        | F    | F         | F     | T     | T     | T
+n⁵ - 99999n⁴     F    | F        | F    | F         | F     | F     | T     | T
+
+OMEGA -> M 
+                 M(1) | M(lg(n)) | M(n) | M(nlg(n)) | M(n²) | M(n³) | M(n⁵) | M(n²⁰)
+lg(n)            T    | T        | F    | F         | F     | F     | F     | F
+nlg(n)           T    | T        | T    | T         | F     | F     | F     | F
+5n + 1           T    | T        | T    | F         | F     | F     | F     | F
+7n⁵ - 3n²        T    | T        | T    | T         | T     | T     | T     | F
+99n³ - 1000n²    T    | T        | T    | T         | T     | T     | F     | F
+n⁵ - 99999n⁴     T    | T        | T    | T         | T     | T     | T     | F
+                 
+THETA -> H
+                 H(1) | H(lg(n)) | H(n) | H(nlg(n)) | H(n²) | H(n³) | H(n⁵) | H(n²⁰)
+lg(n)            F    | T        | F    | F         | F     | F     | F     | F
+nlg(n)           F    | F        | F    | T         | F     | F     | F     | F
+5n + 1           F    | F        | T    | F         | F     | F     | F     | F
+7n⁵ - 3n²        F    | F        | F    | F         | F     | F     | T     | F
+99n³ - 1000n²    F    | F        | F    | F         | F     | T     | F     | F
+n⁵ - 99999n⁴     F    | F        | F    | F         | F     | F     | T     | F

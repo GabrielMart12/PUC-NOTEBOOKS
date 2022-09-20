@@ -1,0 +1,4 @@
+1.) A operação de comparar registros do array
+2.) f(n) = n - 1 vezes
+3.) Os três casos
+4.) Sim, pois em algoritmos que envolvem pesquisa, deve-se comparar todos elementos do array

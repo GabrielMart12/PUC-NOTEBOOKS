@@ -1,0 +1,9 @@
+f6(n) = 64
+f3(n) = log8(n)
+f2(n) = log2(n)
+f9(n) = 4n
+f1(n) = n.log6(n)
+f5(n) = n.log(n)
+f4(n) = 8n²
+f7(n) = 6n³
+f8(n) = 8^2n

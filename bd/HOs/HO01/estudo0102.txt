@@ -1,0 +1,15 @@
+SBD	Sistema de banco de dados é um conjunto de dados relacionados e suas respectivas formas de acesso e organização
+	-> Banco de dados é uma coleção de dados organizados
+		-> As propriedades do banco de dados são finalidade, realidade, coerência e compartilhamento
+		-> Podem ser classicados a partir de sua implementação, como a tradicional, multimídia, geográfico, data warehouse e ativo
+		-> Existem diferentes abordagens para um banco de dados, a partir do processamento de arquivo e SGBD
+		-> Os atores que interagem com o banco de dados são os administradores, projetistas, analistas/programadores e usuários		
+
+	-> Modelo de dados determina a forma de como os dados são organizados
+		-> Coleção de conceitos que descrevem a estrutura do banco de dados
+		-> Provém operações para a manipulação de dados (inserir, atualizar, excluir e recuperar)
+	
+	-> Sistema gerenciador de banco de dados é o software que permite a criação e manipulação dos dados
+		-> O usuário pode acessar o banco de dados, a partir de um SGBD, por meio de consultas
+		-> A principal propriedade de um SGBD é o constrole de redundâncias
+		-> Possui diversas limitações, como em aplicações monousuário, baixa complexidade, requisitos rigorosos, alta especialização

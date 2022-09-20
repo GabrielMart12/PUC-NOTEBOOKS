@@ -1,0 +1,6 @@
+a.) 99n⁸ + nlg(n) - (3n² - 5n - 9) -> O(n⁸)
+b.) n⁸ + nlg(n) - n² -> O(n⁸)
+c.) (3n² - 5n - 9) . (nlg(n)) -> 3n³lg(n) - 5n²lg(n) - 9nlg(n) -> O(n³lg)
+d.) nlg(n) . nlg²(n) + 99n⁸ -> O(n⁸)
+e.) (3n² - 5n - 9) . (nlg(n)) . (nlg²(n)) -> 3n⁴lg³(n) - 5n³lg³(n) - 9n²lg³(n) -> O(n⁴lg³(n))
+f.) (3n² - 5n - 9) -> O(n²)

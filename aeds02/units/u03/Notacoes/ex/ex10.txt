@@ -1,0 +1,27 @@
+Codigo PalindromoIterativo.java
+
+//////////////////////////////////////////////////////
+public static boolean isPalindromo(String str) {
+	boolean resp = true;
+	int n = str.length() - 1;
+	int j = str.length() - 1;
+
+	for(int i = 0; i < n / 2; i++) {
+		if(str.charAt(i) != str.charAt(j)) {
+			resp = false;
+			i = n;
+		}
+		j--;
+	}
+
+	return resp;
+}
+//////////////////////////////////////////////////////
+
+1.) Comparações entre chars
+Melhor -> n / 2 -> O(n)
+Pior   -> n / 2 -> O(n)
+
+2.) Numero de atribuições booleanas
+Melhor -> 1 + 0 -> O(1)
+Pior   -> 1 + n -> O(n)

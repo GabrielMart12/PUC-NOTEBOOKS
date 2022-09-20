@@ -1,0 +1,55 @@
+HO05
+
+1.)
+A = π actors.first_name, actors.last_name (actors)
+B = π directors.first_name, directors.last_name (directors)
+C = A ∩ B
+π actors.first_name, actors.last_name (C)
+
+2.)
+A = π actors.first_name, actors.last_name (actors)
+B = π directors.first_name, directors.last_name (directors)
+C = A - B
+π actors.first_name, actors.last_name (C)
+
+3.)
+A = π actors.first_name, actors.last_name (actors)
+B = π directors.first_name, directors.last_name (directors)
+C = A ∪ B
+π actors.first_name, actors.last_name (C)
+
+4.)
+A = π directors.id (directors)
+B = π movies_directors.director_id (movies_directors)
+C = ρ idm ← id (A - B)
+D = (C) ⨝ idm = movies.id (movies)
+π movies.name (D)
+
+5.)
+A = (actors) ⨝ actors.id = roles.actor_id (roles)            -> a mais
+B = γ roles.actor_id; count(roles.movie_id)→tot (roles)
+C = σ tot >= 2 (B)
+D = π actors.id (actors)
+E = π roles.actor_id (C)
+F = ρ ida ← actors.id (D - E)
+G = (F) ⨝ ida = actors.id (actors)
+π actors.first_name, actors.last_name (G)
+
+A = π actors.id (actors)
+B = γ roles.actor_id; count(roles.movie_id)→tot (roles)
+C = σ tot >= 2 (B)
+D = π roles.actor_id (C)
+E = ρ ida ← actors.id (A - D)
+F = (E) ⨝ ida = actors.id (actors)
+π actors.first_name, actors.last_name (F)
+
+6.)
+A = π movies.id (movies)
+B = γ roles.movie_id; count(roles.actor_id)→Total(roles)
+C = σ Total >= 2 (B)
+D = π roles.movie_id (C)
+E = ρ idm ← id (A - D)
+F = (E) ⨝ idm = movies.id (movies)
+G = (F) ⨝ movies.id = movies_genres.movie_id (movies_genres)
+H = γ movies_genres.genre, movies.year; count(movies.id)→totMovies(G)
+π movies_genres.genre, movies.year, totMovies (H)

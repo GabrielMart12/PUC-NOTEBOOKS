@@ -1,0 +1,38 @@
+Sistema de Banco de Dados -> Conjunto de dados relacionados, bem como sua respectiva forma de acesso e organização.
+Banco de Dados -> Coleção de dados organizados
+Estrutura Lógica -> Modelo de dados
+Software -> Sistema gerenciador de Banco de Dados
+
+O sistema de banco de dados é inclui o banco de dados em si, a definição dos dados contidos no mesmo, o SGBD que dispõe ao usuário uma interface gráfica para a realização de consultas dentro do banco de dadps
+
+Os usuários interagem com o banco de dados através de consultas
+
+Banco de Dados
+	-> Coleção de dados organizados
+	-> A amazon por exemplo utiliza banco de dados para realizar seu serviço
+	-> Exitem banco de dados tradicionais, multimídia, geográfico, data warehouse e ativos
+	-> Existem diferentes abordagens de implementação, como o processamento em arquivo (pouco eficiente) e SGBDs
+		-> Demanda a construção de modelos de implementação
+			-> Especificação: Descrição do minimundo;
+			-> Análise de Requisitos: Restrições de operações
+			-> Projeto conceitual: Estruturas e restrições conceituais
+			-> Projeto lógico: Estruturas e restrições lógicas
+			-> Projeto físico: Estruturas e restrições físicas
+	-> Existem diferentes atores no ciclo de vida do banco de dados
+		-> Administradores (DBA) -> Sao responsáveis por manter o banco de dados em operação, atua em todas as partes de implementação
+		-> Projetistas -> Responsável pelo projeto, atua em todas as etapas de implementação
+		-> Analista/Programadores -> Atuam mais ativamente na implementação do banco de dados utilizando a abordagem escolhida
+		-> Usuário -> Razão de existência do Banco de Dados
+
+Modelo de Dados
+	-> Descreve a forma de como os dados são relacionados, organizados e manipulados
+
+Sistema Gerenciador de Banco de Dados
+	-> Software que torna possível a criação e manutenção efetiva do banco de dados em um meio computadorizado 
+	-> Controle de redundância
+	-> Possui limitações
+		-> Monousuário
+		-> Baixa Complexidade
+		-> Requisitos rigorosos
+		-> Alta especialização
+		-> Custo proibitivo

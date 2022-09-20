@@ -1,0 +1,4 @@
+f(n) = n . lg(n)
+g(n) = lg(n)
+
+f(n) + g(n) -> f(n) = n . lg(n) -> soma das funções de complexidade

@@ -1,0 +1,34 @@
+HO04
+
+1.) 
+A = sigma gender = 'F' (actors)
+pi first_name, last_name (A)
+
+2.)
+A = sigma year > 1999 (movies)
+pi name (A)
+
+3.)
+A = (movies) ⨝ movies.id = movies_directors.movie_id (movies_directors)
+B = (A) ⨝ movies_directors.director_id = directors.id (directors)
+π directors.first_name, directors.last_name, movies.name (B)
+
+4.)
+A = σ rank > 6 (movies)
+B = (A) ⨝ movies.id = roles.movie_id (roles)
+C = (B) ⨝ roles.actor_id = actors.id (actors)
+π movies.name, actors.first_name, actors.last_name, roles.role (C)
+
+5.)
+A = (directors) ⨝ directors.id = movies_directors.director_id (movies_directors)
+B = γ directors.first_name, directors.last_name; count(movie_id)→tot (A)
+π directors.first_name, directors.last_name, tot (B)
+
+6.)
+A = γ genre; count(movie_id)→tot (movies_genres)
+π genre, tot (A)
+
+7.)
+A = (movies) ⨝ movies.id = movies_genres.movie_id (movies_genres)
+B = γ genre; avg(rank)→medio, min(rank)→min, max(rank)→max (A)
+π genre, medio, min, max (B)

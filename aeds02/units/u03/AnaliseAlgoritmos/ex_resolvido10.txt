@@ -1,0 +1,4 @@
+1.) f(n) = n -> melhor opcao
+2.) f(n) = n x lg(n)
+    g(n) = lg(n)
+           n x lg(n)

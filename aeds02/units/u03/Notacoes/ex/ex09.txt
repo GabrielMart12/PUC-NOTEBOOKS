@@ -1,0 +1,7 @@
+a.)
+melhor -> 1 + 0        O(1)
+pior   -> 1 + (n - 2)  O(n)
+
+b.)
+melhor -> 2 + 1(n - 2) O(n) 
+pior   -> 2 + 2(n - 2) O(n)

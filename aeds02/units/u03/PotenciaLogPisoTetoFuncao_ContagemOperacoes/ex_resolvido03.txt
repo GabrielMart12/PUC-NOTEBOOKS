@@ -1,0 +1,2 @@
+Melhor caso: f(n) = n
+Pior caso: f(n) = 2n
