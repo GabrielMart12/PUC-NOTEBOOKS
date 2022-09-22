@@ -1,0 +1,18 @@
+// || Multiplexadores || \\
+
+|| Multiplexação ||
+	-> Consite na operação de transmitir várias comunicações diferentes em um único canal físico
+	-> Esse dispositivo chama-se multiplexador
+	-> Consite em um sistema com n canais de entrada, uma saída e seleção
+
+------//------
+
+|| Número de Canais ||
+	-> O números de entradas está relacionado com o número de variáveis de seleção
+	-> n (número de canais de entrada); m (número de variáveis de seleção); ( n = 2^m )
+
+-----//------
+
+Multiplexador de 2 canais
+	-> Precisa apenas de 1 variável de seleção -> 2¹ = 2
+	-> E = entradas; A = seleção; S = saída; S = Ã.E0 + A.E1;
