@@ -1,0 +1,3 @@
+[submodule "aeds02/aeds02/aeds2"]
+	path = aeds02/aeds02/aeds2
+	url = https://github.com/icei-pucminas/aeds2.git
