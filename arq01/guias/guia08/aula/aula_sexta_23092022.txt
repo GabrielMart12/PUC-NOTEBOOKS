@@ -1,0 +1,44 @@
+// || Somadores || \\
+	-> video 01
+	-> Somadores podem ser atribuídos como a ^ b, e vai um como a & b
+
+--------//---------
+
+|| Subtrator ||
+
+A   B   S0  S1   V
+0 - 0   0   0    0
+0 - 1   1   1    1
+1 - 0   0   0    1
+1 - 1   0   0    0
+
+          (0)
+          0 0
+(-1) 1 1        0 1 (+1)
+          1 0
+          (-2)
+
+mintermos
+S0 = (A'.B')
+
+maxtermos
+S1 =
+
+assign s = a ^ b
+assign v = a' & b
+
+-----------//----------
+
+|| Conceitos ||
+	-> overflow = transbordamento, bit a mais numa operação
+	-> plus = positivo
+	-> minus = negativo
+
+	-> Pode-se fazer comparadores, igualdades e diferenças
+	
+	-> O papel do somador algébrico é essêncial, por conceder diversos valores que serão importantes para a programação
+	-> Espelhamento de um núcleo de um processador
+
+-----------//-----------
+
+|| Comparação de Magnitude ||
