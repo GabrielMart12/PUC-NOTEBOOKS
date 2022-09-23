@@ -378,178 +378,7 @@
     <wire from="(770,1130)" to="(790,1130)"/>
     <wire from="(820,1140)" to="(870,1140)"/>
     <wire from="(230,970)" to="(310,970)"/>
-    <comp lib="0" loc="(440,890)" name="Pin">
-      <a name="facing" val="north"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="e1"/>
-      <a name="labelloc" val="south"/>
-    </comp>
-    <comp lib="7" loc="(324,567)" name="Text">
-      <a name="text" val="0 AND/OR"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="1" loc="(310,420)" name="NAND Gate"/>
-    <comp lib="7" loc="(594,452)" name="Text">
-      <a name="text" val="OR"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="0" loc="(200,200)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="y"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="1" loc="(530,420)" name="AND Gate"/>
-    <comp lib="1" loc="(750,510)" name="NOT Gate">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="7" loc="(645,1030)" name="Text">
-      <a name="text" val="AND"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="1" loc="(440,230)" name="AND Gate"/>
-    <comp lib="0" loc="(640,200)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="y"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="1" loc="(450,840)" name="NOT Gate">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="1" loc="(600,1090)" name="AND Gate">
-      <a name="inputs" val="4"/>
-    </comp>
-    <comp lib="7" loc="(646,1283)" name="Text">
-      <a name="text" val="NOR"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="1" loc="(820,470)" name="AND Gate"/>
-    <comp lib="7" loc="(209,159)" name="Text">
-      <a name="text" val="GUIA_0701"/>
-    </comp>
-    <comp lib="1" loc="(370,500)" name="NOR Gate"/>
-    <comp lib="1" loc="(600,1240)" name="AND Gate">
-      <a name="inputs" val="4"/>
-    </comp>
-    <comp lib="1" loc="(970,450)" name="OR Gate">
-      <a name="inputs" val="4"/>
-    </comp>
-    <comp lib="1" loc="(310,500)" name="NOR Gate"/>
-    <comp lib="0" loc="(1010,450)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-    </comp>
-    <comp lib="1" loc="(880,230)" name="AND Gate"/>
-    <comp lib="1" loc="(600,1040)" name="AND Gate">
-      <a name="inputs" val="4"/>
-    </comp>
-    <comp lib="0" loc="(480,1400)" name="Pin">
-      <a name="facing" val="north"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="e2"/>
-      <a name="labelloc" val="south"/>
-    </comp>
-    <comp lib="1" loc="(340,1020)" name="AND Gate"/>
-    <comp lib="7" loc="(650,1232)" name="Text">
-      <a name="text" val="OR"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="0" loc="(990,210)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-    </comp>
-    <comp lib="7" loc="(189,350)" name="Text">
-      <a name="text" val="GUIA_0703"/>
-    </comp>
-    <comp lib="0" loc="(220,700)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="x"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="7" loc="(850,505)" name="Text">
-      <a name="text" val="NOR"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="1" loc="(950,210)" name="OR Gate"/>
-    <comp lib="1" loc="(370,220)" name="NAND Gate"/>
-    <comp lib="1" loc="(520,750)" name="AND Gate">
-      <a name="inputs" val="3"/>
-    </comp>
-    <comp lib="1" loc="(340,750)" name="XNOR Gate"/>
-    <comp lib="1" loc="(520,830)" name="AND Gate">
-      <a name="inputs" val="3"/>
-    </comp>
-    <comp lib="1" loc="(470,1340)" name="NOT Gate">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="7" loc="(825,576)" name="Text">
-      <a name="text" val="0 AND/NAND"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="1" loc="(520,710)" name="AND Gate">
-      <a name="inputs" val="3"/>
-    </comp>
-    <comp lib="1" loc="(350,1120)" name="XOR Gate"/>
-    <comp lib="1" loc="(820,230)" name="NOT Gate">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="1" loc="(310,220)" name="NAND Gate"/>
-    <comp lib="7" loc="(847,425)" name="Text">
-      <a name="text" val="NAND"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="1" loc="(300,460)" name="OR Gate"/>
-    <comp lib="1" loc="(600,1140)" name="AND Gate">
-      <a name="inputs" val="4"/>
-    </comp>
-    <comp lib="1" loc="(380,230)" name="NOT Gate">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="1" loc="(330,970)" name="NOT Gate"/>
-    <comp lib="7" loc="(642,1183)" name="Text">
-      <a name="text" val="XNOR"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="1" loc="(530,500)" name="AND Gate"/>
-    <comp lib="1" loc="(300,380)" name="AND Gate"/>
-    <comp lib="1" loc="(600,1190)" name="AND Gate">
-      <a name="inputs" val="4"/>
-    </comp>
-    <comp lib="7" loc="(840,385)" name="Text">
-      <a name="text" val="AND"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="1" loc="(820,1140)" name="OR Gate">
-      <a name="inputs" val="7"/>
-    </comp>
-    <comp lib="0" loc="(870,1140)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-    </comp>
-    <comp lib="0" loc="(200,180)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="x"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="0" loc="(640,260)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="e"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="1" loc="(320,830)" name="NOR Gate"/>
-    <comp lib="1" loc="(300,190)" name="AND Gate"/>
-    <comp lib="7" loc="(601,495)" name="Text">
-      <a name="text" val="NOR"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="0" loc="(200,260)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="e"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="7" loc="(649,159)" name="Text">
-      <a name="text" val="GUIA_0702"/>
-    </comp>
-    <comp lib="0" loc="(220,720)" name="Pin">
+    <comp lib="0" loc="(180,390)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val="y"/>
       <a name="labelloc" val="west"/>
@@ -559,113 +388,205 @@
       <a name="label" val="x"/>
       <a name="labelloc" val="west"/>
     </comp>
-    <comp lib="7" loc="(231,951)" name="Text">
-      <a name="text" val="GUIA_0705"/>
-    </comp>
+    <comp lib="1" loc="(530,420)" name="AND Gate"/>
     <comp lib="7" loc="(849,465)" name="Text">
       <a name="text" val="OR"/>
       <a name="font" val="Dialog plain 12"/>
     </comp>
-    <comp lib="0" loc="(670,770)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
+    <comp lib="1" loc="(330,710)" name="XOR Gate"/>
+    <comp lib="7" loc="(847,425)" name="Text">
+      <a name="text" val="NAND"/>
+      <a name="font" val="Dialog plain 12"/>
     </comp>
     <comp lib="1" loc="(360,1170)" name="XNOR Gate"/>
-    <comp lib="1" loc="(330,710)" name="XOR Gate"/>
-    <comp lib="1" loc="(430,840)" name="NOT Gate">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="1" loc="(350,1070)" name="NAND Gate"/>
-    <comp lib="0" loc="(400,550)" name="Pin">
-      <a name="facing" val="north"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="e"/>
-      <a name="labelloc" val="south"/>
-    </comp>
-    <comp lib="1" loc="(510,210)" name="OR Gate"/>
-    <comp lib="1" loc="(820,430)" name="AND Gate"/>
-    <comp lib="0" loc="(640,180)" name="Pin">
+    <comp lib="0" loc="(180,370)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val="x"/>
       <a name="labelloc" val="west"/>
     </comp>
-    <comp lib="0" loc="(180,390)" name="Pin">
+    <comp lib="0" loc="(480,1400)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="e2"/>
+      <a name="labelloc" val="south"/>
+    </comp>
+    <comp lib="1" loc="(530,500)" name="AND Gate"/>
+    <comp lib="7" loc="(825,576)" name="Text">
+      <a name="text" val="0 AND/NAND"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(640,200)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val="y"/>
       <a name="labelloc" val="west"/>
     </comp>
-    <comp lib="7" loc="(333,581)" name="Text">
-      <a name="text" val="1 NAND/NOR"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="1" loc="(530,460)" name="AND Gate"/>
-    <comp lib="1" loc="(390,500)" name="NOT Gate">
+    <comp lib="1" loc="(450,840)" name="NOT Gate">
       <a name="facing" val="north"/>
     </comp>
-    <comp lib="1" loc="(810,220)" name="NOR Gate"/>
-    <comp lib="7" loc="(642,1084)" name="Text">
-      <a name="text" val="NAND"/>
-      <a name="font" val="Dialog plain 12"/>
+    <comp lib="1" loc="(470,1340)" name="NOT Gate">
+      <a name="facing" val="north"/>
     </comp>
     <comp lib="1" loc="(530,380)" name="AND Gate"/>
-    <comp lib="1" loc="(520,790)" name="AND Gate">
-      <a name="inputs" val="3"/>
+    <comp lib="7" loc="(840,385)" name="Text">
+      <a name="text" val="AND"/>
+      <a name="font" val="Dialog plain 12"/>
     </comp>
-    <comp lib="1" loc="(600,1290)" name="AND Gate">
+    <comp lib="1" loc="(600,1040)" name="AND Gate">
       <a name="inputs" val="4"/>
     </comp>
+    <comp lib="1" loc="(820,230)" name="NOT Gate">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="1" loc="(300,460)" name="OR Gate"/>
+    <comp lib="1" loc="(320,790)" name="OR Gate"/>
     <comp lib="0" loc="(500,1400)" name="Pin">
       <a name="facing" val="north"/>
       <a name="tristate" val="false"/>
       <a name="label" val="e1"/>
       <a name="labelloc" val="south"/>
     </comp>
-    <comp lib="1" loc="(340,1220)" name="OR Gate"/>
-    <comp lib="7" loc="(601,410)" name="Text">
-      <a name="text" val="NAND"/>
-      <a name="font" val="Dialog plain 12"/>
+    <comp lib="0" loc="(440,890)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="e1"/>
+      <a name="labelloc" val="south"/>
     </comp>
-    <comp lib="7" loc="(644,1132)" name="Text">
-      <a name="text" val="XOR"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="1" loc="(620,550)" name="OR Gate">
-      <a name="inputs" val="4"/>
-    </comp>
-    <comp lib="1" loc="(820,510)" name="AND Gate"/>
     <comp lib="0" loc="(460,890)" name="Pin">
       <a name="facing" val="north"/>
       <a name="tristate" val="false"/>
       <a name="label" val="e0"/>
       <a name="labelloc" val="south"/>
     </comp>
-    <comp lib="1" loc="(320,790)" name="OR Gate"/>
-    <comp lib="1" loc="(370,420)" name="NAND Gate"/>
-    <comp lib="7" loc="(597,374)" name="Text">
+    <comp lib="7" loc="(645,1030)" name="Text">
       <a name="text" val="AND"/>
       <a name="font" val="Dialog plain 12"/>
     </comp>
-    <comp lib="0" loc="(220,990)" name="Pin">
+    <comp lib="1" loc="(440,200)" name="AND Gate"/>
+    <comp lib="1" loc="(600,1240)" name="AND Gate">
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="1" loc="(520,750)" name="AND Gate">
+      <a name="inputs" val="3"/>
+    </comp>
+    <comp lib="1" loc="(350,1120)" name="XOR Gate"/>
+    <comp lib="1" loc="(880,230)" name="AND Gate"/>
+    <comp lib="7" loc="(642,1183)" name="Text">
+      <a name="text" val="XNOR"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="7" loc="(189,350)" name="Text">
+      <a name="text" val="GUIA_0703"/>
+    </comp>
+    <comp lib="7" loc="(601,495)" name="Text">
+      <a name="text" val="NOR"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(380,230)" name="NOT Gate">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="1" loc="(390,500)" name="NOT Gate">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(640,260)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="e"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="1" loc="(370,500)" name="NOR Gate"/>
+    <comp lib="1" loc="(750,220)" name="NOR Gate"/>
+    <comp lib="1" loc="(340,1220)" name="OR Gate"/>
+    <comp lib="1" loc="(880,200)" name="AND Gate"/>
+    <comp lib="1" loc="(520,710)" name="AND Gate">
+      <a name="inputs" val="3"/>
+    </comp>
+    <comp lib="1" loc="(520,790)" name="AND Gate">
+      <a name="inputs" val="3"/>
+    </comp>
+    <comp lib="7" loc="(324,567)" name="Text">
+      <a name="text" val="0 AND/OR"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(300,380)" name="AND Gate"/>
+    <comp lib="1" loc="(740,190)" name="OR Gate"/>
+    <comp lib="1" loc="(510,210)" name="OR Gate"/>
+    <comp lib="0" loc="(550,210)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="1" loc="(530,460)" name="AND Gate"/>
+    <comp lib="1" loc="(820,510)" name="AND Gate"/>
+    <comp lib="1" loc="(820,430)" name="AND Gate"/>
+    <comp lib="7" loc="(644,1132)" name="Text">
+      <a name="text" val="XOR"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(510,1340)" name="NOT Gate">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="7" loc="(231,681)" name="Text">
+      <a name="text" val="GUIA_0704"/>
+    </comp>
+    <comp lib="7" loc="(642,1084)" name="Text">
+      <a name="text" val="NAND"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(300,190)" name="AND Gate"/>
+    <comp lib="0" loc="(200,260)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="e"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="1" loc="(970,450)" name="OR Gate">
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="1" loc="(950,210)" name="OR Gate"/>
+    <comp lib="7" loc="(594,452)" name="Text">
+      <a name="text" val="OR"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(340,1020)" name="AND Gate"/>
+    <comp lib="7" loc="(649,159)" name="Text">
+      <a name="text" val="GUIA_0702"/>
+    </comp>
+    <comp lib="0" loc="(200,200)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val="y"/>
       <a name="labelloc" val="west"/>
     </comp>
-    <comp lib="7" loc="(817,591)" name="Text">
-      <a name="text" val="1 OR/NOR"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="1" loc="(750,220)" name="NOR Gate"/>
-    <comp lib="7" loc="(231,681)" name="Text">
-      <a name="text" val="GUIA_0704"/>
-    </comp>
-    <comp lib="1" loc="(440,200)" name="AND Gate"/>
-    <comp lib="1" loc="(490,1340)" name="NOT Gate">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="1" loc="(630,770)" name="OR Gate">
+    <comp lib="1" loc="(620,550)" name="OR Gate">
       <a name="inputs" val="4"/>
     </comp>
-    <comp lib="0" loc="(550,210)" name="Pin">
+    <comp lib="1" loc="(310,500)" name="NOR Gate"/>
+    <comp lib="0" loc="(870,1140)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="1" loc="(330,970)" name="NOT Gate"/>
+    <comp lib="0" loc="(400,550)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="e"/>
+      <a name="labelloc" val="south"/>
+    </comp>
+    <comp lib="7" loc="(597,374)" name="Text">
+      <a name="text" val="AND"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(350,1070)" name="NAND Gate"/>
+    <comp lib="7" loc="(650,1232)" name="Text">
+      <a name="text" val="OR"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(600,1140)" name="AND Gate">
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="1" loc="(310,420)" name="NAND Gate"/>
+    <comp lib="0" loc="(990,210)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="1" loc="(310,220)" name="NAND Gate"/>
+    <comp lib="0" loc="(670,770)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
     </comp>
@@ -673,35 +594,113 @@
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
     </comp>
-    <comp lib="1" loc="(820,390)" name="AND Gate"/>
-    <comp lib="0" loc="(180,370)" name="Pin">
+    <comp lib="7" loc="(209,159)" name="Text">
+      <a name="text" val="GUIA_0701"/>
+    </comp>
+    <comp lib="0" loc="(1010,450)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(220,720)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="y"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="0" loc="(220,700)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val="x"/>
       <a name="labelloc" val="west"/>
     </comp>
-    <comp lib="1" loc="(740,190)" name="OR Gate"/>
-    <comp lib="1" loc="(350,1270)" name="NOR Gate"/>
-    <comp lib="0" loc="(520,1400)" name="Pin">
+    <comp lib="1" loc="(490,1340)" name="NOT Gate">
       <a name="facing" val="north"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="e0"/>
-      <a name="labelloc" val="south"/>
     </comp>
-    <comp lib="1" loc="(880,200)" name="AND Gate"/>
-    <comp lib="1" loc="(600,990)" name="AND Gate">
-      <a name="inputs" val="4"/>
+    <comp lib="1" loc="(820,470)" name="AND Gate"/>
+    <comp lib="7" loc="(601,410)" name="Text">
+      <a name="text" val="NAND"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(750,510)" name="NOT Gate">
+      <a name="facing" val="north"/>
     </comp>
     <comp lib="7" loc="(643,981)" name="Text">
       <a name="text" val="NOT"/>
       <a name="font" val="Dialog plain 12"/>
     </comp>
-    <comp lib="1" loc="(510,1340)" name="NOT Gate">
+    <comp lib="0" loc="(640,180)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="x"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="1" loc="(350,1270)" name="NOR Gate"/>
+    <comp lib="1" loc="(600,1090)" name="AND Gate">
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="1" loc="(320,830)" name="NOR Gate"/>
+    <comp lib="7" loc="(850,505)" name="Text">
+      <a name="text" val="NOR"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(430,840)" name="NOT Gate">
       <a name="facing" val="north"/>
+    </comp>
+    <comp lib="1" loc="(810,220)" name="NOR Gate"/>
+    <comp lib="1" loc="(340,750)" name="XNOR Gate"/>
+    <comp lib="0" loc="(200,180)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="x"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="7" loc="(817,591)" name="Text">
+      <a name="text" val="1 OR/NOR"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(600,1290)" name="AND Gate">
+      <a name="inputs" val="4"/>
     </comp>
     <comp lib="0" loc="(760,560)" name="Pin">
       <a name="facing" val="north"/>
       <a name="tristate" val="false"/>
       <a name="label" val="e"/>
+      <a name="labelloc" val="south"/>
+    </comp>
+    <comp lib="0" loc="(220,990)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="y"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="1" loc="(630,770)" name="OR Gate">
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="1" loc="(440,230)" name="AND Gate"/>
+    <comp lib="1" loc="(370,420)" name="NAND Gate"/>
+    <comp lib="7" loc="(646,1283)" name="Text">
+      <a name="text" val="NOR"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(820,1140)" name="OR Gate">
+      <a name="inputs" val="7"/>
+    </comp>
+    <comp lib="1" loc="(600,990)" name="AND Gate">
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="7" loc="(231,951)" name="Text">
+      <a name="text" val="GUIA_0705"/>
+    </comp>
+    <comp lib="1" loc="(520,830)" name="AND Gate">
+      <a name="inputs" val="3"/>
+    </comp>
+    <comp lib="1" loc="(600,1190)" name="AND Gate">
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="1" loc="(820,390)" name="AND Gate"/>
+    <comp lib="7" loc="(333,581)" name="Text">
+      <a name="text" val="1 NAND/NOR"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(520,1400)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="e0"/>
       <a name="labelloc" val="south"/>
     </comp>
   </circuit>
