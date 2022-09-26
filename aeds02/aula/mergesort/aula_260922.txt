@@ -1,0 +1,11 @@
+//|| Mergesort  ||\\
+	-> Dividir para conquistar
+	-> Ordenação por intercalação, misturar as coisas
+	-> No mergesort, a intercalção é na volta da recursividade
+	-> Normalmente ele é implementado de forma recursiva
+	-> Esse método demanda um espaço de memória adicional, por duplicar o espaço de memória
+		-> Essa locação de memória tem haver em alocar e desalocar memória
+	
+------//-------
+
+Ex. No slide de mergesort, faça o exerfcício resolvido 1
