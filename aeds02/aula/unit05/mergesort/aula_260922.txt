@@ -113,5 +113,8 @@ Ex. Vetor tamanho 9 e divisões
 ------//------------------------------
 
 Ex. No canvas, estude os vídeos do countingsort, shellsort, bubblesort, heapsort e as conclusões
+Ex. Execute e compare os códigos dos algoritmos disponíveis no git
+Ex. No microfundamentos de algoritmos e estruturas de dados, estude classe autorreferenciável e lista flexível
+Ex. Na unidade 0 estude o conjunto de slides 0i_ponteiros
 
 -----//------------------------------

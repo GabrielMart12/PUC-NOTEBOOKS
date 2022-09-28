@@ -1,0 +1,24 @@
+// || Ponteiro || \\
+	===> Ponteiro é uma variável que armazena endereço de memória
+		+--> int[] vet = new int[5] (nesse ponteiro armazena-se 1 endereço de memória e mais 4 em sequência)
+		+--> O nosso vet não armazena o valor, e sim o endereço de memória da primeira posição de vet	
+		
+		------
+		------
+		------ | *f10h*
+		------ |  f11h
+		------ |  f12h
+		------ |  f13h
+		------ |  f14h
+		------
+		------
+		
+		+--> Cliente c = new Cliente(); ---> Referência que armazena um endereço de memória, cria-se um objeto e retorna o endereço de memória
+
+------------------//-------------------
+
+Ex. Estude os slides unit00 -> Introdução à linguagem c para programadores java
+
+------------------//-------------------
+
+
