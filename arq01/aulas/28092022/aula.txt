@@ -1,0 +1,29 @@
+28/09/2022
+
+// || ARQ01 || \\
+
+Resumo
+Circuitos combinatórios
+	---> Funções lógicas (SoP, PoS)
+	---> ULA
+		+--> Lógicas
+		+--> Aritméticas
+		+--> Relacionais
+		+--> Flags (São necessários para fazer as ações de controle, maior e menor que zero, sinal, estouro da representação e paridade)
+			+-> Zero
+			+-> Carry
+			+-> Overflows
+			+-> Parity
+			+-> Minus
+			+-> Plus
+		+--> Deslocamentos
+
+------------------//-----------------
+
+// || GUIA08 || \\
+	---> Comparadores: Igualdade e diferença
+		+--> Logisim
+
+------------------//-----------------
+
+
