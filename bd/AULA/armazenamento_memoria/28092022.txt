@@ -1,0 +1,135 @@
+\\ // |-| Armazenamento em Memória |-| \\ //
+	===> Os BDs são armazenados fisicamente em meios (mídias) de armazenamento computacional
+	===> Raro um BD completo caber em uma memória primária
+	===> São armazenados em memória primaria, secundária e terciária
+	===> Existe correlação entre capacidade de armazenamento, velocidade de transferencia e custo em meios de armazenamento
+		+--> A capacidade de armazenamento é feita pela quantidade de bits
+		+--> A velocidade é a quantidade de dados que passam num canal por um determinado tempo
+	===> Quanto maior a capacidade, menor a velocidade
+	===> Quanto maior a velocidade, maior o custo
+
+---------------------//----------------------
+
+|-| Hierárquia de Memória |-|
+	===> CPU (Registrador)
+	===> CACHE 
+	===> RAMs
+	===: SSDs (meio do caminho)
+	===> HDs, ROMs, etcs
+	===> Teclado, mouse, video
+
+---------------------//----------------------
+
+|| Registrador ||
+	===> Memória imbutida na CPU para executar um programa
+	===> Rápida  ~ 60 Tbps
+	===> Pequena ~ centenas de bytes
+	===> Cara    ~ 500 R$
+
+--------------------//-----------------------
+
+|| Cache ||
+	===> Memória eletrônica
+	===> Vários níveis
+	===> Rápida  ---> L1 ~ 6 Tbps
+	===> Pequena ---> L4 ~ 128 Mbps
+	===> Cara ~ 100 R$
+
+--------------------//-----------------------
+
+|| RAM ||
+	===> Memória eletrônica e volátil
+	===> Acesso aleatório
+	===> Rápida  ~ 80 Gbps
+	===> Pequena ~ dezenas de GB
+	===> Cara    ~ 0.5 R$ / MB
+	===> Armazenamento temporário, usada em instruções de programas como a cache	
+
+--------------------//-----------------------
+
+|| Flash ||
+	===> Tipicamente é memória eletrônica (SSD mistura com magnética)
+	===> Resistente e durável (memória não volátil)
+	===> Rápida ~ 5 Gbps
+	===> Média  ---> Alguns TB
+	===> Barata ---> 0.0007 R$ / MB
+	===> Utilizado para manter dados de maneira persistente
+
+-------------------//------------------------
+
+|| HD ||
+	===> Memória magnética
+	===> Similar a uma pilha de vinis
+	===> Discos em alta rotação
+	===> Lenta  ---> 100 Mbps
+	===> Grande ---> dezenas de TB
+	===> Barata ---> ~ 0.0002 R$ / MB
+	===> Utilizada para manter dados de maneira persistente
+
+-------------------//------------------------
+
+|| Fita ||
+	===> Memória magnética removível
+	===> Acesso sequencial
+	===> Lenta  ---> ~ 2 Mbps
+	===> Grande ---> PB (jukebox)
+	===> Barata ---> ~ 0.00003 R$ / MB
+	===> Utilizada para manter dados pouco mutáveis e acessados de maneira persistente, como backups
+
+-------------------//------------------------
+
+|| Óptica ||
+	===> Memória removível
+	===> Discos ópticos
+	===> Lenta  ---> ~ 20 Mbps
+	===> Grande ---> PB (jukebox)
+	===> Barata ---> 0.0001 R$ / MB
+	===> Utilizada para manter dados poucos mutáveis e de acesso sequencial de maneira persistente, como multimídia
+
+-------------------//------------------------
+
+|| Comparativo de memória ||
+
+CPU              Registrador       60T         KB        500           sim
+Primária         Cache             6T          MB        100           sim
+Primária         RAM               80G         GB        0.05          sim
+Secundária       Flash             5G          TB        0.0007        não
+Secundária       HD                100M        TB        0.0002        não
+Terciária        Óptico            20M         TB        0.0001        não
+Terciária        Fita              2M          TB        0.00003       não
+
+-------------------//------------------------
+
+|| SGBDs ||
+	===> Gerenciar eficienetemente dados transientes, permanentes e dados
+	===> No projeto físico os administrados escolhem as melhores técnicas e organização para entregar uma performance satisfatória com um custo módico
+	===> Transferir uma pequena porção da memória secundária para a primária, para processar e gravar no disco novamente
+	===> O disco magnético ainda é muito importante para o armazenamento de banco de dados
+
+------------------//-------------------------
+
+|| Disco Magnético ||
+	===> Pratos, discos
+	===> Acionador (aste)
+	===> Trilha (dados armazenados no disco)
+	===> O conjunto de trilhas em vários discos são importantes para facilidade e velocidade de leitura
+	===> Os blocos são as subdivisões das trilhas
+	===> Os discos são transferem blocos
+	===> O format do hd remagnetiza o disco, subdivide as trilhas e da um endereço físico a cada trilha
+		+--> Blocos também podem ser chamados de página, tamanho fixado na formatação
+		+--> O controlador de disco transfere para o bloco a memória primária
+	===> Buffer ---> Área de reserva contínua em memória primária
+		+--> O bloco copiado para o buffer é o input
+		+--> O buffer é copiado para o buffer, ou seja, o output
+		+--> Os dispositivos também podem ser mesclados
+
+--------------------//----------------------
+
+|| HD: Leitura e Escrita (I/O) ||
+	===> Tempo de busca ---> seek time
+	===> Tempo de latência, tempo necessário para o disco rodar 
+	===> Tempo de transferência efetivo
+	===> Quanto mais fragmenteado está o disco, mais difícil 
+	
+
+
