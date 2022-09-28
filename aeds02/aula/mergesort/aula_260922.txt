@@ -1,11 +1,117 @@
 //|| Mergesort  ||\\
-	-> Dividir para conquistar
-	-> Ordenação por intercalação, misturar as coisas
-	-> No mergesort, a intercalção é na volta da recursividade
-	-> Normalmente ele é implementado de forma recursiva
-	-> Esse método demanda um espaço de memória adicional, por duplicar o espaço de memória
-		-> Essa locação de memória tem haver em alocar e desalocar memória
-	
-------//-------
+
+|| Funcionamento Básico ||
+	===> Dividir para conquistar
+	===> Ordenação por intercalação, misturar as coisas
+	===> No mergesort, a intercalção é na volta da recursividade
+	===> Normalmente ele é implementado de forma recursiva
+	===> Esse método demanda um espaço de memória adicional, por duplicar o espaço de memória
+		+--> Essa locação de memória tem haver em alocar e desalocar memória
+	===> O algoritmo (in-place) depende do tamanho do vetor. Nesse caso não é in-place
+	===> Dividir pela metade até o array ter tamanho 1
+	===> O conquistar na volta da recursividade é lenta e o ponto essencial do mergesort	
+
+------//------------------------------
 
 Ex. No slide de mergesort, faça o exerfcício resolvido 1
+
+[1 2 3 4 9][3 5 6 7 8]
+[] -> criando um novo vetor
+[1]
+[1 2]
+[1 2 3]
+[1 2 3 3]
+[1 2 3 3 4]
+[1 2 3 3 4 5]
+[1 2 3 3 4 5 6]
+[1 2 3 3 4 5 6 7]
+[1 2 3 3 4 5 6 7 8]
+[1 2 3 3 4 5 6 7 8 9]
+
+[5  3   4] 
+[5  3] [4] 
+[5][3] [4] 
+
+------//------------------------------
+
+|| Intercalação ||
+
+[95  15  42  4  23  16  8  77]
+[95  15  42  4][23  16  8  77]
+[95  15][42  4][23  16][8  77]      
+[95][15][42][4][23][16][8][77]
+[15  95][4  42][16  23][8  77]
+[4  15  42  95][8  16  23  77]
+[4  8  15  16  23  42  77  95]
+
+------//----------------------------
+
+|| Algoritmo em C Like
+
+void mergesort(int esq, int dir) {
+	if(esq < dir) { // quando o subvetor tem tamanho 1
+		int meio = (esq + dir) / 2;
+		mergesort(esq, meio);
+		mergesort(meio + 1, dir);
+		intercalar(esq, meio, dir);
+	}
+}
+
+// Depois da divisão, na ultima recursividade 
+void intercalar(int esq, int meio, int dir) {
+	// quantidade de elementos em cada array
+	int nEsq = (meio + 1) - esq;
+	int nDir = (meio) - esq;
+		
+	int[] arrEsq = new int[nEsq + 1]; // declara-se com 1 posição a mais para declarar um valor em hexadecimal
+	int[] arrDir = new int[nDir + 1];
+	
+	// Sentinela no final dos dois arrays
+	// Serve para comparar o maior valor do array com a sentinela ---> simplifica o código
+	// Em programação quando temos um número inteiro começando com 0x significa que o valor será em hexadecimal
+	arrEsq[nEsq] = arrDir[nDir] = 0x7FFFFFFF; // F siginifica 15 (dec) --- 1111 (bin)
+						  // 7 - 7 (dec) --- 0111 (bin
+						  // 01³¹ -> 0 é o bit de sinal e 31 1s é o maior inteiro possível	
+	
+	// Cria os dois arrays e intercala
+	int iEsq, iDir, i;
+	for(iEsq = 0; iEsq < nEsq; iEsq++) {
+		arrEsq[iEsq] = arr[esq + iEsq];
+	}
+	
+	for(iDir = 0; iDir < nDir; iDir++) {
+		arrDir[iDir] = arr[dir - iDir];
+	}
+}
+
+-------//----------------------------
+
+Ex. Vetor tamanho 9 e divisões
+
+ 0  1  2  3  4  5  6  7  8
+[3  4  2  9  3  1  2  8  7]
+
+(0 + 8) / 2
+[3  4  2  9  3][1  2  8  7]
+
+(0 + 4) / 2 -- (5 + 8) / 2
+[3  4  2][9  3][1  2][8  7]
+
+(0 + 2) / 2 -- (3 + 4) / 2 -- (5 + 6) / 2 -- (7 + 8) / 2
+[3  4][2][9][3][1][2][8][7]
+
+(0 + 1) / 2 -- (2 + 2) / 2 -- ...
+[3][4][2][9][3][1][2][8][7]
+	
+-------//----------------------------
+
+|| Conclusão ||
+	===> O método é estável com elementos iguais
+	===> Normalmente é implementado de forma recursiva
+	===> faz theta(n.log(n)) nos três casos
+
+------//------------------------------
+
+Ex. No canvas, estude os vídeos do countingsort, shellsort, bubblesort, heapsort e as conclusões
+
+-----//------------------------------
