@@ -1,5 +1,3 @@
-28/09/2022
-
 // || ARQ01 || \\
 
 Resumo
@@ -22,8 +20,98 @@ Circuitos combinatórios
 
 // || GUIA08 || \\
 	---> Comparadores: Igualdade e diferença
-		+--> Logisim
+		+--> As vezes o tempo de uma porta pode ser maior que uma unidade de tempo
+		+--> Há o verilog AMS que explorar melhor o tempo de execução das portas 
+	---> Verilog:
+
+module EQUALS(output [5:0] s0, input[5:0] a, input[5:0] b);
+	wire w1[6:0], w2[6:0];
+	
+	xnor XNOR_0(w1[0], a[0], b[0]);
+	xnor XNOR_1(w1[1], a[1], b[1]);
+	xnor XNOR_2(w1[2], a[2], b[2]);
+	xnor XNOR_3(w1[3], a[3], b[3]);
+	xnor XNOR_4(w1[4], a[4], b[4]);
+	
+	and AND_01(w2[0], w1[0], w1[1]);
+	and AND_02(w2[1], w1[2], w1[3]);
+	and AND_03(w2[2], w1[0], w1[1]);
+	and AND_04(s0,    w2[4], w1[4]);
+endmodule // EQUALS
+
+module teste;
+	reg[5:0] a;
+	reg[5:0] b;
+	reg      s;
+
+	EQUALS equals_01 (s, a, b);
+	
+	initial begin : start
+		a = 6'b010101;
+		b = 6'b010101;
+	end // start
+
+	initial begin : main
+		#1 $display("%3d %6b %6b %6b", $time, s, a, b);
+	end // main
+endmodule // teste
 
 ------------------//-----------------
+
+// || TEMPO || \\
+	---> Não se sabe o que é tempo, e sim medida de tempo
+	---> Em um neurônio, as computações são feitas ao longo dele. A percepção de tempo acontece ao longo de um dendrito
+	---> O tempo biologicamente é uma distância de percepção
+	---> Entre dois pontos de referência, é necessária uma percepção de início e fim
+		+--> Em uma transição de níveis, há o atrazo ou lag
+		+--> No sistema, ele passa um pouco do nível na estabilização, semelhante ao Tom e Jerry
+		+--> A referência de clock despreza os atrasos
+		+--> Estabilização : clock; Subida: posedge; Descida: nedgeged
+	---> Circuit JS1 (555)
+		+--> Compara-se com uma caixa d'água
+		+--> O capacitor, é a quantidade de água que a caixa aguenta
+		+--> Tem um censor para definir o preenchimento da caixa d'água (ideal: 1/3 e 2/3)
+	---> Os circuitos sequenciais dependem das entradas e dos resultados de circuitos anteriores, mais dependentes do tempo
+	---> Os pinguins andam em fila, com pressa alguns andam ao lado de outro. Semelhantes com o comportamento de um circuito real
+	---> As duas portas nor serão chamadas de flipflop
+	---> Um clock depende de um gereador de sequências
+		+--> A oscilação do clock é chamado de tick
+		+--> Um período também a chamado de um pulso
+		+--> A frequência é o inverso do período
+	---> Verilog
+		+--> Sinais mais rápidos
+		+--> Sinais mais lento
+	---> 0 e 1, numa forma arbitrária  de organização
+""
+module clock(output clk);
+	reg clk; // necessita de uma saída estável
+	initial begin : start
+		clk = 1'b0;
+	end // start
+	always begin : main
+		#12 clk  = ~clk; // sugestão 12 na unidade de tempo
+	end // main
+endmodule // clock
+
+module testeclock;
+	wire clk;
+	clock CLK1(clk);
+	initial begin : start
+		// arquivo vcd é um arquivo texto, semelhante a um banco de dados
+		// melhor forma de visualizar é utilizando o gtkwave
+		// gtkwave testeclock01.vcd
+		$dumpfile("testeclock01.vcd"); // gerar arquivo
+	end // main
+
+	initial begin : main
+	
+	end
+endmodule
+""
+
+	---> Pode-se sincronizar na borda de subida, descida, ou durante o tempo do clock
+		+--> @ (posedge clock)
+		+--> @ (negedge clock)
+		+--> @ (clock)
 
 
