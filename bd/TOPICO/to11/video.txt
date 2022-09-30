@@ -1,0 +1,45 @@
+|| Armazenamento em Memória ||
+	===> Banco de dados são armazenados físicamente em meios de armazenamento computacional
+		+--> Memória primária: Próxima e operada diretamente pela CPU
+		+--> Memória secundária: Distante e não operada pela CPU
+		+--> Memória terciária: Muito distante e não operada pela CPU
+	===> Existe correlação entre capacidade de armazenamento, velocidade de transferência e custo
+		+--> Maior capacidade, menor velocidade
+		+--> Maior velocidade, maior custo
+	===> Os dados, em armazenamento de memória, podem ser transientes ou persistentes.
+		+--> SGBDs devem ser capazes de transferir dados transientes ou persistentes entre memória
+		+--> No projeto físico, DBAs e projetistas devem escolher as melhores técnicas para a organização de dados para garantir equilíbrio entre custo e armazenamento
+	===> A responsabilidade de um SGBD consiste em transferir dados da memória secundária para a primária para serem processados, bem como os retornar novamente a memória de origem
+	===> Os HDs são compostos por um conjunto de discos magnéticos com um motor capaz de girá-los sobre um eixo. Além de um outro motor responsável por acionar o acionador e braço para posicionar as cabeças de leitura na superfície do disco
+	===> O bloco é a unidade mínima de transferência de dados do disco para a memória primária
+		+--> Podem ser acessados de forma aleatória pelo disco, necessitando apenas de seu endereço de bloco
+		+--> Controladores de discos usam o endereço do bloco na memória secundário para o transferir para um espaço contido na memória primária denomindado buffer
+		+--> Leitua (Input): Copia dados do disco para o buffer
+		+--> Escrita (Output): Copia dados do buffer para o disco
+	===> Uma operação de I/O é executada em 4 passos:
+		+--> Controlador recebe endereços de bloco e buffer
+		+--> Controlador comanda o acionador a movimentar os braços para posicionar a cabeça na trilha do endereço de bloco
+		+--> O controlador espera os discos girarem até o ponto de leitura e escrita
+		+--> Os dados são copiados para o buffer
+		+--> Tempo de busca, latência e transferência
+			+-> transferência de bloco << busca + latência
+	===> Buffering de blocos reserva vários buffers na memória primária para agilizar a transferência de blocos do disco
+		+--> O duplo buffering reserva o uso de dois buffers para a leitura ou gravação em disco
+		+--> Dessa forma é possível fazer leitura e escrita contínua em blocos consecutivos
+		+--> Para isso funcionar os blocos devem ser alocados de forma específica
+			+-> Alocação contígua -> blocos alocados de forma consecutiva
+				+> Rápido I/O com duplo buffering
+				+> Difícil expanção
+			+-> Alocação por ligação -> blocos alocados por ponteiros 
+				+> Facilita expansão
+				+> I/O mais lento e impossível utilizar duplo buffering
+			+-> Alocação por segmento -> agrupa blocos contíguos por segmento (clusters) e cada segmento possui um ponteiro para o próximo segmento
+				+> Combinação da alocação contígua e por ligação
+				+> Buffering duplo viável
+				+> Facilita a expansão
+			+-> Alocação indexada -> blocos com índice são criados contendo ponteiros para blocos de dados
+				+> Rápido I/O, com busca sendo efetuada pelos blocos de índice, que podem ter alocação contígua ou por segmentação
+				+> Fácil expanção
+
+----------------//------------------
+

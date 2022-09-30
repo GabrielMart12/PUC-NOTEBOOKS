@@ -1,0 +1,55 @@
+|| Organização de Dados ||
+
+| Arquivos e Registros |
+	===> A forma que os dados estão alocados em memória secundária afeta o desempenho do SGBD para a recuperação e manipulação desses dados
+		+--> São dispostos em arquivos de registros
+			+-> Registro é uma coleção de valores relacionados a fatos sobre o minimundo, tais como atributos, instancias de entidades e relacionamentos
+				+> Cada valor de um registro está restrito a um tipo de dado
+					> Booleano
+					> Inteiro
+					> Numero Real
+					> Inteiro Longo
+					> Data
+					> String
+					> BLOB (p + n) bytes, p é o tamanho do ponteiro onde o tamanho n está armazenado
+				+> Podem ser de tamanho fixo ou variável
+			+-> Arquivo é uma coleção de registros relacionados
+				+> Todo arquivo contém metadados (descritor) aos programas que acessam os registros
+				+> Estão alocados em diferentes blocos de disco, sendo que seus registros podem estar alocados em 1 ou mais blocos
+				+> O fator de bloco de um arquivo é o piso da quantidade de registros de um arquivo que cabem em um bloco de disco
+					> Blocos com t bytes
+					> Registros de r bytes, sendo r <= t
+					> F = piso [ t / r ]
+					> Registros de tamanho variável o tamanho médio é utilizado
+					> Espaço na utilizado -> U = t - (F x r)
+					> Numero de blocos necessários para armazenar um arquivo -> B = teto [ n / f ] 
+					> Consumo de espaço -> C = B x t
+
+-------------------//------------------
+
+| Métodos de Acesso |
+	===> Conjunto de operações de recuperações e atualizações em um arquivo
+		+--> Em arquivos estáticos, operações de atualizações são raramente executadas
+		+--> Em arquivos dinâmicos, operações de atualizações são executadas com muita frequência
+	===> Muitas operações aplicadas a arquivos envolvem pesquisa
+		+--> Especifica critérios que registros devem obedecer, com expressões booleanas
+	===> SGBDs acessam registros utilizando operações representativas, em que tipicamente um registro é processado por vez
+		+--> Open > prepara arquivos para a leitura ou escrita
+		+--> Reset > posiciona o ponteiro do arquivo aberto para o início do arquivo
+		+--> Close > libera buffers alocados e realiza operações de limpeza de memória
+		+--> Find (Locate) > procura o primeiro registro que satisfaça uma condição
+		+--> FindNext > procura o próximo registro que satisfaça uma condição
+		+--> Read(Get) > copia o registro do buffer para uma variável de programa
+		+--> Delete > remove o registro atual
+		+--> Modify > modifica valores de campos do registro atual
+		+--> Insert > insere um novo registro no arquivo
+		+--> Scan > Combina as operações Find, FindNext e Read
+		+--> Reorganize > Organiza os blocos de registros de um arquivo 	
+
+-----------------//---------------------
+
+| Tipos de Arquivo |
+	===> Métodos de acesso operam de forma diferente dependendo de como os registros estão dispostos em um arquivo
+		+--> Arquivos Heap (Pilha) > dispõe registros de forma desordenada
+		+--> Arquivos Sequencial > dispõe registros de forma ordenada
+		+--> Arquivos Hash > posicionados a partir da aplicação de uma função hash sobre um ou mais campos		
