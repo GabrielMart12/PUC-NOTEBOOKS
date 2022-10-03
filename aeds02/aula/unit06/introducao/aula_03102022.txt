@@ -1,0 +1,153 @@
+|| Listas Flexíveis ||
+	===> rm *.class javac *.java
+	===> Nesse momento trabalha-se com ponteiros
+	===> Numa caixa, dois ponteiros são vinculados à ela, um deles aponta para a posição da própria caixa e o outro para outra caixa. 
+		P --> | el | --> | | --> | | --> | | -->  = (terra)
+	===> Essas estruturas são flexívels porque é possível inserir elementos em qualquer posição
+		tmp --> | |	P --> | el | --> | | --> | | --> | | --> (terra)
+		tmp.prox = p; p = tmp; tmp = NULL;
+		P --> | |--> | el | --> | | --> | | --> | | --> (terra)
+		tmp --> (terra)
+	===> Em inserir no fim, deve-se percorrer toda a cadeia
+		P && I --> | 5 | --> | 3 | --> | 4 | --> | 8 | --> | 9 | --> (terra)
+		I = P; I = I.prox;
+		P --> | 5 | --> | 3 | --> | 4 | --> | 8 | && I --> | 9 | --> (terra)
+		P --> | 5 | --> | 3 | --> | 4 | --> | 8 | --> | 9 | && I --> (terra)
+		I.prox = new Celula(10);
+		P --> | 5 | --> | 3 | --> | 4 | --> | 8 | --> | 9 | --> | 10 | --> (terra)
+		
+		// --- //
+		class Celula {
+			int elemento;
+			Celula prox;
+			public Celula () {
+				this(-1); // pode também ser o menor inteiro possível 0x7FFFFFFF
+			}
+			public Celula(int elemento) {
+				this.elemento = elemento;
+				this.prox = NULL; // aponta a referência da próxima célula para vazio
+			}
+		}
+		// --- //
+
+------------- // -----------------
+
+|| Introdução de Tipos Abstratos de Dados (Lista) ||
+	===> Ponteiro é uma variável que armazena um endereço de memória
+	===> Representação gráfica
+		c1 ---> ? c2 ---> ?
+		c1 ---> 1 c1 ---> aa
+		c2 --> NULL
+		c1 && c2 --> 1 / aa
+		c2.codigo = 4 // muda o código do endereço de memória de c1 e c2 ---> perigoso mandar dois ponteiros para o mesmo lugar
+		c2 --> NULL
+		c2 = c1.clone(); // criar uma cópia de c1 para o endereço de c2. Ambos objetos, aparentemente são iguias mas são diferentes		
+	===> Representação na arquitetura
+		Memória
+		c1 33h
+'		c2 33h
+		
+		1 / aa 33h
+	===> Classe célula
+		+--> A boa pratica da POO recomenda o uso de get/set e atributos privados
+			class Celula {
+				public int elemento;
+				public Celula prox;
+				public Celula() {
+					this(0);
+				}
+				public Celula(int x) {
+					this.elemento = x;
+					this.prox = null;
+				}
+			}
+		+--> O que acontece se outra classe for Celula tmp = new Celula(3);
+			tmp --> | 3 | --> (terra)
+
+	Obs: A boa prática de programação recomenda a existência de um método clone dentro das nossas classes de dados. Esse método replica (copia ou clona) o objeto atual em outro endereço
+
+------------//------------------
+
+|| Pilha ||
+	===> Importante nao perder a referencia da fila
+	===> Codigo
+		class Pilha {
+			private Celula topo;
+			public Pilha() {
+				this.topo = null;
+			}
+			public void inserir(int x) {
+				Celula tmp = new Celula(x);
+				tmp.prox = this.topo;
+				this.topo = tmp;
+				tmp = null;
+			}
+			// minha resposta
+			public int remover() {
+				int resp = this.topo.elemento;
+				this.topo = this.topo.prox;
+				return resp;
+			} 
+			// correta
+			public int remover() throws Exception {
+				if(topo == null) 
+					throw new Exception("Erro");
+				int elemento = topo.elemento;
+				Celula tmp = topo; // o ponteiro temporario aponta para a caixinha do topo (7)
+				topo = topo.prox;  // o topo aponta para a proxima caixa (5)
+				tmp.prox = null;   // o prox de tmp aponta para null, ou seja essa celula fica fora da cadeia
+				tmp = null;
+				return elemento;
+			}
+			// Iterativa
+			public void mostrar() {
+				System.out.print("[ ");
+				for(Celula i = topo; i != null; i = i.prox) {
+					System.out.print(i.elemento + " ");
+				}
+				System.out.print("]");
+			}
+			// Recursiva
+			public void mostrar() {
+				System.out.print("[ ");
+				mostrar(topo);
+				System.out.print("]");
+			}
+			public void mostrar(Celula i) {
+				if(i != null) {
+					System.out.print(i.elemento + " ");
+					mostrar(i.prox); // o mostrar primeiro mostra os elementos de baixo para cima
+				}
+			}
+		}
+	===> Representação gráfico do método inserir
+		topo ---> (terra)
+		tmp  ---> | x | ---> (terra)
+		tmp  ---> | x | ---> (topo)(terra) // tmp aponta para null, topo continua apontando para null
+		topo && tmp ---> | x | ---> (topo)(terra)
+		tmp  ---> (terra)
+		topo ---> | x | ---> (topo)(terra)
+		
+		+--> Inserir 5
+			topo ---> | 3 | ---> (terra)
+			tmp  ---> | 5 | ---> (terra)
+			tmp  ---> | 5 | && topo ---> | 3 | ---> (terra) // tmp.prox de 5, aponta para a caixa de 3
+			topo && tmp ---> | 5 | ---> | 3 | ---> (terra)
+			topo ---> | 5 | ---> | 3 | ---> (terra)
+			tmp  ---> (terra)
+
+		+--> Inserir 7
+			...
+	===> Representação gráfica do método remover
+
+	Obs: Na página 32, na unidade 6b sobre pilha flexível observamos que a coleta de lixo do Java e do C# é capaz de desalocar todo objeto não referenciado. Ou seja, objetos que não são apontados;
+	Obs: As linguagens C e C++ não possuem coleta de lixo, logo, o programador deve fazer um free() ou delete() antes do comando "tmp = null".
+
+-----------//-------------
+
+Ex. O método mostrar da unidade 6b imprime os elementos da pilha na ordem em que serão removidos. Implemente esse método de forma recursiva.
+Ex. Repita o anterior mostrando os elementos na ordem em que foram inseridos
+Ex. Repita o anterior de forma iterativa
+	+--> Dica nessa questão, será necessário utilizar duas estruturas de for. Ou seja, theta(n²)
+
+----------//--------------
