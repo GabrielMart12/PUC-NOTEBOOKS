@@ -1,0 +1,42 @@
+|| Tecnologias de Armazenamento ||
+	===> Desempenho e confiabilidade depende da tecnologia usada para isso
+
+-----//-----
+
+|| Hardware de Armazenamento ||
+	===> ATA, SATA e SCSI
+		+--> Cada tecnologia entregará desempenhos diferentes
+	===> Conjunto de discos
+		+--> RAID é uma tecnologia de virtualização de armazenamento que combina discos em uma unidade lógica
+			+-> Desempenho em velocidade e espaço
+			+-> Redundâncias, esses sistema é tolerante a falhas
+		+--> RAID 0
+			+-> Distribuição sem cópias
+			+-> Requisitos: n > 1 discos
+			+-> Velocidade: > n
+			+-> Capacidade: ~ n
+			+-> Não tolerante a falhas
+			+-> Alto desempenho, com taxa de falha maior que em discos sem RAID
+		+--> RAID 1
+			+-> Espelhamento sem distribuição
+			+-> Resquisito: n > 1 discos
+			+-> Velocidade: > 1
+			+-> Capacidade: ~ n
+		+--> RAID 5
+			+-> Distribuição com cópia
+			+-> Requisito: n > 2 discos
+			+-> Velocidade: > n
+			+-> Capacidade: ~ n - 1
+			+-> Tolerância a falhas
+			+-> Desempenho e capacidade próximos ao RAID 0, com taxa de falha menor que discos sem RAID
+			+-> A velocidade de leitura e escrita despenca
+				+> HOT SWAP trocar discos na hora do problema com o sistema ativo
+				+> HOT SPEAR disco de reserva caso um disco falhe
+		+--> RAID 10
+			+-> Espelhado com distribuição
+			+-> Requisito: n |>< m & n > m
+			+-> Velocidade: |>< n / m
+			+-> Capacidade: ~ n / m
+			+-> Combinação do RAID 1 com RAID 0, suporta múltiplas falhas enquanto houver cópia espelhada
+
+-----//-----
