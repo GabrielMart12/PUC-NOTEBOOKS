@@ -1,0 +1,64 @@
+|| Organização de Dados ||
+	===> Tabela em banco de dados vira arquivo
+		+--> Armazena o cabeçalho, que é o metadados do arquivo
+		+--> Todo registro possui um tipo de dados. Ex. Booleano, inteiro, real, inteiro longo, data, string e BLOB
+		+--> Podem ser compostos por registros de tamanho fixo ou variável. Ou seja, CHAR e VARCHAR, respectivamente.
+		+--> A locação do registro dentro do arquivo pode estar espalhada ou não
+	===> As linhas em banco de dados vira registro
+		+--> Devem ser organizados de forma a serem rapidamente localizados
+-----//-----
+
+|| Métodos de Acesso ||
+	===> Há métodos de acesso que possibilitam atualizar arquivos, podem ser estáticos ou dinâmicos
+		+-> Uma das operações mais usadas é a pesquisa
+		+-> OPEN prepara arquivos para leitura e escrita
+			+> Aloca buffers na memória
+			+> Recupera o cabeçalho do arquivo
+			+> Posiciona o ponteiro no início do arquivo
+		+-> RESET posiciona o ponteiro para o início do arquivo
+		+-> CLOSE fecha o arquivo
+		+-> Find procura o primeiro registro que satisfaça um condição
+		+-> FindNext procura o próximo ponteiro que satisfaça uma condição
+		+-> Read copia um arquivo para uma variável de programa
+		...
+	===> Os métodos de acesso dependem do tipo de arquivo
+-----//-----
+
+|| Arquivo Heap ||
+	===> Arquivo com desordenados
+	===> O(n)
+	===> Inserção no arquivo é simples
+	===> Alteração e exclusão dependem dos n elementos
+	===> A exclusão pode ser lógica (marcação) ou por realocação
+	===> Arquivo Direto (Relativo)
+
+-----//-----
+
+|| Arquivo Sequencial ||
+	===> Arquivo ordenado
+	===> Melhor pesquisa por usar a pesquisa binária log(n)
+		+--> Busca mais eficiente
+	===> O problema é a inserção nesse caso	
+		+--> Desloca-se arquivos para realizar a inserção
+		+--> Existem arquivos de overflow para facilitar o merge entre os arquivos
+	===> A alteração e exclusão vai ser melhor por haver uma pesquisa binária, caso haja um campo de indexação
+		+--> Podem haver uma realocação completa do arquivo
+
+-----//-----
+
+|| Arquivo Hash ||
+	===> Os arquivos são distribuídos em blocos e acessados com uma função hash
+		+--> A pesquis é O(1), a alteração e exclusão também é O(1)
+	===> O custo do hash tem haver com colisão e expansão
+		+--> Se tem colisão entre registros, deve tratar essa colisão
+	===> Também há problemas de expansão
+	===> Hashing universal
+		+--> Mapea um conjunto de chaves de tamnho variável para um espaço de tamanho fixo. Em caso de colisão deve-se tratar esse erro, pode-se usar o endereçamento aberto, hash encadeada ou hash múltiplo
+		+--> O tratamento das colisões tende a n, O(1) em uma situação ótima
+		+--> Pode-se usar também o fator de carga na ordem de 25%, no entanto desperdiça espaço de endereçamento
+	===> Hashing perfeito garante que dois registros não vão ocupar o mesmo endereço
+		+--> Evita-se colisão, mas se perde em flexibilidade
+		+--> Gasta-se um espaço considerável em memória
+		+--> Hashing mínimo e perfeito n = m, onde n é o número de chaves
+
+-----//-----

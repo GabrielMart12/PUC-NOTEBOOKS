@@ -1,0 +1,31 @@
+|| Armazenamento em Memória ||
+	===> ...
+
+-----//-----
+
+|| HD: Leitura e Escrita I/O ||
+	===> Tempo de transferência
+		+--> Quando transfere-se blocos entre disco e CPU, há o tempo de busca, latência e transferência
+		+--> Buffering de blocos
+			+-> Reservas vários buffers em memória primária para agilizar a transferência de blocos
+		+--> O duplo buffering acelera o processo de leitura e gravação em disco
+			+-> Diminui o tempo de busca e latência
+
+-----//-----
+
+|| HD: Alocação de Blocos ||
+	===> Alocação contígua, blocos consecutivos em disco
+		+--> Rápido I/O com duplo buffering
+		+--> A expansão é prejudicada
+	===> Alocação por ligação, cada bloco tem um ponteiro para o próximo
+		+--> Facilita a expansão
+		+--> I/O  mais lento
+	===> Alocação por segmento, agrupa blocos consecutivos em seguimento (clusters) e cada um tem um ponteiro para o próximo segmento
+		+--> Combinação contígua e ligação
+		+--> Duplo buffering viável em um segmento, agilizando o I/O
+		+--> Facilita a expansão, reduzindo o número de realocações na alteração dos blocos
+	===> Alocação indexada há dois locais em disco diferentes, um para índices e para dados
+		+--> Rápido I/O com busca sendo efetuada em blocos de índice, que podem ter alocação contígua ou por segmentação (duplo buffering)
+		+--> Facilita a expansão, com realocações ocorrendo em blocos de índice
+
+-----//-----
