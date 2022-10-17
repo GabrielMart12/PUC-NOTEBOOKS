@@ -1,0 +1,7 @@
+|| Matriz ||
+	===> A matriz é composta por vária células, cada uma com quatro ponteiros
+		---> Inicia-se a celula apontando o valor, dir, esq, inf e sup
+
+Ex. Suponha  que temos três matrizes flexíveis alocadas e todas contendo três linhas e três colunas. Suponha também que temos os ponteiros i1, i2 e i3 apontando para o início de cada uma das nossas matrizes. Faça um método que soma os elementos das duas primeiras matrizes e salva na terceira.
+
+Ex. Faça o construtor da matriz flexível. Esse construtor recebe os números de linha e coluna da matriz e aloca todos as posições necessárias. Dica aloca a primeira linha pensando somente com suas esquerdas e direitas. Em seguida, aloque as demais linhas preocupando-se com as direitas e  esquerdas e a conexão com a linha superior
